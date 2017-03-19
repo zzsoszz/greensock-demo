@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>greensock</title>
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/greensock/TweenMax.js"></script>
+	<script src="js/greensock/TimelineMax.js"></script>
+	<style>
+		body{
+			margin:0;
+		}
+		.letter{
+			font-family: "Arial Black";
+			font-size: 70px;
+			font-weight: bold;
+			color:#444;
+			display: inline-block;
+			position: relative;
+		}
+		.greensock{
+			text-align: center;
+		}
+		.icons{
+			font-size: 40px;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.red{color:red;}
+		.green{color:green;}
+		.blue{color:blue;}
+		.yellow{color:yellow;}
+		.purple{color:purple;}
+		.orange{color:orange;}
+	</style>
+	<script>
+		window.onload=function(argument) {
+
+			// var letters=$(".letter");
+			// icons=$(".icons i").toArray();	
+			// var tl=new TimelineLite();
+			// letters=$(".letter").toArray();
+			
+			// tl.staggerFrom(letters,1,{
+			// 	y:"-100px",
+			// 	ease:Elastic.easeOut,
+			// 	repeat:1,
+			// 	repeatDelay:3
+			// },0.15);
+
+			// tl.staggerFrom(icons,1,{
+			// 	scale:2,
+			// 	opacity:0,
+			// 	ease:Power2.easeOut
+			// },0.15,"-=2");
+
+
+
+			var letters=$(".letter");
+			icons=$(".icons i").toArray();	
+			var tl=new TimelineMax({repeat:1,repeatDelay:0.5});
+			letters=$(".letter").toArray();
+			
+			tl.staggerFrom(letters,1,{
+				y:"-100px",
+				ease:Elastic.easeOut,
+				repeatDelay:3
+			},0.15);
+
+			tl.staggerFrom(icons,1,{
+				scale:2,
+				opacity:0,
+				ease:Power2.easeOut
+			},
+			0.15, //每个item时间间隔
+			"-=2" //时间线的间隔
+			);
+			
+
+
+		}
+	</script>
+</head>
+<body>
+<div class="greensock">
+	<div class="letter red">A</div>
+	<div class="letter green">G</div>
+	<div class="letter blue">A</div>
+	<div class="letter yellow">S</div>
+	<div class="letter purple">E</div>
+	<div class="letter red">H</div>
+	<div class="letter green">I</div>
+	<div class="letter blue">M</div>
+	<div class="letter yellow">O</div>
+	<div class="letter purple">P</div>
+</div>
+
+<div class="icons">
+	<i class="red fa fa-hand-rock-o"></i>
+	<i class="green fa fa-hand-paper-o"></i>
+	<i class="blue fa fa-hand-scissors-o"></i>
+	<i class="orange fa fa-hand-lizard-o"></i>
+	<i class="purple fa fa-hand-spock-o"></i>
+</div>
+</body>
+</html>
