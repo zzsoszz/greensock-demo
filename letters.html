@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>greensock</title>
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/greensock/TweenMax.js"></script>
+	<script src="js/greensock/TimelineMax.js"></script>
+	<style>
+		body{
+			margin:0;
+		}
+		.letter{
+			font-family: "Arial Black";
+			font-size: 70px;
+			font-weight: bold;
+			color:#444;
+			display: inline-block;
+			position: relative;
+		}
+		.greensock{
+			text-align: center;
+		}
+		.red{color:red;}
+		.green{color:green;}
+		.blue{color:blue;}
+		.yellow{color:yellow;}
+		.purple{color:purple;}
+	</style>
+	<script>
+		window.onload=function(argument) {
+			$(".letter").each(function(i){
+				if(i%2==0)
+				{
+					TweenLite.from(this,2,{"x":"100px","y":"100px",opacity:0});
+				}else{
+					TweenLite.from(this,2,{"x":"-100px","y":"-100px",opacity:0});
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+<div class="greensock">
+	<div class="letter red">A</div>
+	<div class="letter green">G</div>
+	<div class="letter blue">A</div>
+	<div class="letter yellow">S</div>
+	<div class="letter purple">E</div>
+	<div class="letter red">H</div>
+	<div class="letter green">I</div>
+	<div class="letter blue">M</div>
+	<div class="letter yellow">O</div>
+	<div class="letter purple">P</div>
+</div>
+</body>
+</html>
