@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>greensock</title>
+	
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/greensock/TweenMax.js"></script>
+	<script src="js/greensock/TimelineMax.js"></script>
+	<style>
+		#square{
+			background-color:red;
+			width:100px;
+			height:100px;
+		}
+	</style>
+	<script>
+		window.onload=function(argument) {
+			var square=$("#square");
+			TweenLite.to(square,1,{x:"200px"});
+		}
+	</script>
+</head>
+<body>
+	<div id="square">
+		
+	</div>
+</body>
+</html>
