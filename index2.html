@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>greensock</title>
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/greensock/TweenMax.js"></script>
+	<script src="js/greensock/TimelineMax.js"></script>
+	<style>
+		body{
+			margin:0;
+		}
+		.fa-motorcycle{
+			color:#333;
+			font-size: 50px;
+			line-height: 30px;
+			margin-top: 68px;
+			margin-left: 20px;
+			position: relative;
+		}
+		.sky{
+			background-color: #adf;
+			height: 100px;
+		}
+	</style>
+	<script>
+		window.onload=function(argument) {
+			var cycle=$(".fa-motorcycle");
+			TweenLite.to(cycle,2,{
+				left:"600px",
+				//ease:Power1.easeOut
+				//ease:Elastic.easeOut
+				//ease:Bounce.easeOut
+
+			});
+			TweenLite.from(cycle,2,{
+				opacity:0
+			});
+			TweenLite.from(cycle,2,{
+				rotation:-45,
+				ease:Bounce.easeOut,
+				transformOrigin:"left top"
+			});
+			//TweenLite.to(square,1,{x:"200px"});
+		}
+	</script>
+</head>
+<body>
+	<div class="sky">
+		<i class="fa fa-motorcycle">
+		</i>
+	</div>
+	<div class="ground"></div>
+</body>
+</html>
