@@ -45,22 +45,35 @@
 				var tl=new TimelineLite();
 				var icon=$(this).find(".fa");
 				var circle=$(this).find(".circle");
-				tl.to(circle,1,{
+
+
+				// tl.to(circle,1,{
+				// 	rotationY:"180"
+				// })
+				// .to(icon,1,{
+				// 	rotationY:"180"
+				// },"-=0.5");
+
+				tl.staggerTo([icon,circle],1,{
 					rotationY:"180"
-				})
-				.to(icon,1,{
-					rotationY:"180"
-				},"-=0.5");
+				},0.25);
+
 			},function(){
 				var tl=new TimelineLite();
 				var icon=$(this).find(".fa");
 				var circle=$(this).find(".circle");
-				tl.to(circle,1,{
+				
+				// tl.to(circle,1,{
+				// 	rotationY:"0"
+				// })
+				// .to(icon,1,{
+				// 	rotationY:"0"
+				// },"-=0.5");
+				
+				tl.staggerTo([icon,circle],1,{
 					rotationY:"0"
-				})
-				.to(icon,1,{
-					rotationY:"0"
-				},"-=0.5");
+				},0.25);
+
 			});
 		});
 	</script>
