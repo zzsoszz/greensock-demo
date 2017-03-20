@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>greensock menue</title>
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/greensock/TweenMax.js"></script>
+	<script src="js/greensock/TimelineMax.js"></script>
+	<style>
+		body{
+			margin:0;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		.point{
+			width:10px;
+			height: 10px;
+			background-color:red;
+			border-radius: 10px;
+			position: absolute;
+		}
+		.point1{
+			left:150px;
+			top:50px;
+		}
+		.point2{
+			left:300px;
+			top:200px;
+		}
+		.point3{
+			left:450px;
+			top:50px;
+		}
+		.point4{
+			left:600px;
+			top:200px;
+		}
+		.point5{
+			left:750px;
+			top:50px;
+		}
+		.point6{
+			left:900px;
+			top:200px;
+		}
+		#plane{
+			color:#333;
+			font-size:80px;
+			position: relative;
+			top:50px;
+			left:150px;
+			margin-top:-30px;
+			margin-left:-35px;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			
+			var plane=$("#plane");
+			TweenMax.to(plane,5,{
+				bezier:{
+					autoRotate:45, //true,旋转度数
+					type:"soft",//soft,quardratic,cubic
+					curviness:2,
+					values:[
+						{left:150,top:50},
+						{left:300,top:200},
+						{left:450,top:50},
+						{left:600,top:200},
+						{left:750,top:50},	
+						{left:900,top:200}	
+					]
+				},
+				ease:Linear.easeNone,
+				repeat:-1
+			});
+			
+		});
+	</script>
+</head>
+<body>
+
+<i id="plane" class="fa fa-plane">
+</i>
+<div class="point point1"></div>
+<div class="point point2"></div>	
+<div class="point point3"></div>	
+<div class="point point4"></div>	
+<div class="point point5"></div>	
+<div class="point point6"></div>	
+
+</body>
+</html>
