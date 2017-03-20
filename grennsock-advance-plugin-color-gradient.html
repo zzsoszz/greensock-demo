@@ -33,29 +33,24 @@
 	<script>
 		
 		$(document).ready(function () {
-			var myColor={value:"#f00",bgcolor:"red"};
+			var myColor={inner:"red",outer:"black"};
 			function updateColor(){
-				 var text=$(".text");
-				 text.html(myColor.value + " "+ myColor.bgcolor);
-				//var gradient="radial-gradient(red,black)";
+				var square=$("#square");
+				var text=$(".text");
+				var gradient="radial-gradient("+myColor.inner+" , "+myColor.outer+")";
+				console.log(gradient);
+				text.html(gradient);
+				square.css("background-image",gradient);
 			}
 			updateColor();
 			TweenMax.to(myColor,2,{
 				colorProps:{
-					value:"#fff",
-					bgcolor:"#999"
+					inner:"green",
+					outer:"blue"
 				},
 				onUpdate:updateColor,
 				ease:Linear.easeNone
 			});
-
-			// TweenMax.to(myColor,3,{
-			// 	colorProps:{
-			// 		value:"rgb(23,255,59)" //value:"blue"
-			// 	},
-			// 	onUpdate:updateColor,
-			// 	ease:Linear.easeNone
-			// });
 
 		});
 	</script>
