@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>greensock menue</title>
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/greensock/TweenMax.js"></script>
+	<script src="js/greensock/TimelineMax.js"></script>
+	<script src="js/greensock/plugins/ColorPropsPlugin.js"></script>
+	<style>
+		body{
+			margin:0;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		.text{
+			float: left;
+			font-family: arial;
+			font-size: 60px;
+			color:#333;
+			margin-left:50px;
+		}
+		#square{
+			background-image:radial-gradient(red,black);
+			position: relative;
+			width: 200px;
+			height: 200px;
+			float: left;
+		}
+	</style>
+	<script>
+		
+		$(document).ready(function () {
+			var myColor={value:"#f00"};
+			function updateColor(){
+				var text=$(".text");
+				text.html(myColor.value);
+			}
+			updateColor();
+			
+			TweenMax.to(myColor,2,{
+				colorProps:{
+					value:"#fff"
+				},
+				onUpdate:updateColor,
+				ease:Linear.easeNone
+			});
+			// TweenMax.to(myColor,3,{
+			// 	colorProps:{
+			// 		value:"rgb(23,255,59)" //value:"blue"
+			// 	},
+			// 	onUpdate:updateColor,
+			// 	ease:Linear.easeNone
+			// });
+
+		});
+	</script>
+</head>
+<body>
+
+<div id="square" class="square">
+</div>
+<div class="text">Hello</div>
+
+</body>
+</html>
