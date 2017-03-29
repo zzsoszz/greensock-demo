@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>greensock menue</title>
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="js/jqueryui/jquery-ui.css">
+	
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/greensock/TweenMax.js"></script>
+	<script src="js/greensock/TimelineMax.js"></script>
+	<script src="js/greensock/plugins/Physics2DPlugin.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script> 
+
+<!-- 	<script src="js/greensock/plugins/ColorPropsPlugin.js"></script>
+	<script src="js/greensock/plugins/MorphSVGPlugin.min.js"></script>
+	<script src="js/greensock/plugins/DrawSVGPlugin.min.js"></script>
+	<script src="js/greensock/plugins/TextPlugin.js"></script>
+	-->
+	
+	<!-- 
+	<script src="js/greensock/plugins/MorphSVGPlugin.min.js"></script>
+	<script src="js/greensock/plugins/DrawSVGPlugin.min.js"></script>
+	<script src="js/greensock/plugins/Physics2DPlugin.min.js"></script>
+	<script src="js/greensock/plugins/PhysicsPropsPlugin.min.js"></script>
+	<script src="js/greensock/plugins/ScrambleTextPlugin.min.js"></script>
+	<script src="js/greensock/plugins/ThrowPropsPlugin.min.js"></script>
+	<script src="js/greensock/plugins/16327/SplitText.min.js"></script>
+	<script src="js/greensock/plugins/CustomEase.min.js"></script>
+	<script src="js/greensock/plugins/CustomBounce.min.js"></script>
+	<script src="js/greensock/plugins/CustomWiggle.min.js"></script> -->
+<!-- 
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/Physics2DPlugin.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/PhysicsPropsPlugin.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrambleTextPlugin.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ThrowPropsPlugin.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomEase.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomBounce.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomWiggle.min.js"></script> -->
+
+<!-- 
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/TimelineMax.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/TextPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/ScrollToPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/RoundPropsPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/RaphaelPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/EaselPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/DirectionalRotationPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/ColorPropsPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/TweenLite.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/CSSPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/BezierPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/AttrPlugin.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/jquery.gsap.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/easing/EasePack.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/TweenMax.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/TimelineLite.min.js"></script>
+    <script data-require="gsap@*" data-semver="1.9.0" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.0/plugins/CSSRulePlugin.min.js"></script>
+     -->
+
+
+	<style>
+		body {
+		  background-color:#555;
+		}
+		#featureAnimation, #featureBox {
+		  background-color:#000;
+		  height: 220px;
+		  overflow:hidden;
+		  line-height: normal;
+		  font-size: 80%;
+		}
+		#featureAnimation {
+		  position:relative;
+		  
+		}
+		#featureBox {
+		  position:absolute;
+		}
+		#featureAnimation, #featureBox, #whyGSAP, .featureTextGreen, .featureTextWhite {
+		  width: 936px;
+		}
+		#whyGSAP, .featureTextGreen, .featureTextWhite {
+		  text-align: center;
+		}
+		#whyGSAP, .featureTextGreen, .featureTextWhite {
+		  font-size:50px;
+		  position:absolute;
+		  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+		  top:0;
+		}
+		.featureTextGreen {
+		  color:#91e600;
+		  font-weight: bold;
+		}
+		.featureTextWhite {
+		  color:white;
+		  font-weight:normal;
+		}
+		.star {
+		  position: absolute;
+		  width: 16px;
+		  height: 16px;
+		  display: none;
+		}
+		#browserIcons {
+		  top:64px;
+		  left: 180px;
+		  width: 92px;
+		  height: 92px;
+		  position: absolute;
+		  text-align:left;
+		}
+		#browserIcons img {
+		  position:absolute;
+		}
+		.featureTextMinor {
+		  color:#CCCCCC;
+		  font-weight:normal;
+		  font-size:20px;
+		  position:absolute;
+		  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+		  visibility:hidden;
+		}
+		.dot {
+		  position:absolute;
+		  background-color: #91e600;
+		  width:50px;
+		  height:50px;
+		  border-radius:50%;
+		}
+		#ctrl_slider {
+		  position:absolute;
+		  width: 824px;
+		  height:10px;
+		  left:18px;
+		  top:196px;
+		  background: rgba(80,80,80,0.3);
+		  border:1px solid rgba(102,102,102,0.5);
+
+		}
+	</style>
+	<script>
+
+		$(document).ready(function () {
+				TweenLite.to(".green", 6, {physicsProps:{
+				     x:{velocity:200, acceleration:600},
+				     y:{velocity:-200, friction:0.002}
+				   }
+				});
+
+				TweenLite.to(".orange", 6, {physicsProps:{
+				     x:{velocity:200, acceleration:400},
+				     y:{velocity:-300, friction:0.002}
+				   }
+				});
+
+		});
+
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>
