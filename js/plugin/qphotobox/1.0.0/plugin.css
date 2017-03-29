@@ -11,27 +11,30 @@
     padding:20px;
 }
 .qphotobox .prev{
-  width:35px;
-  height:60px;
+  width:79px;
+  height:140px;
   position:absolute;
   top:50%;
   left:0;
   transform: translate(-100%, -50%);
   background-image:url("images/prev.png");
   background-position:center;
-  background-size:35px 60px;
+  background-size:79px 140px;
   background-repeat:no-repeat;
   max-width:100%;
 }
+.qphotobox .disable{
+  display:none;
+}
 .qphotobox .next{
-  width:35px;
-  height:60px;
+  width:79px;
+  height:140px;
   position:absolute;
   top:50%;
   right:0;
   transform: translate(100%, -50%);
   background-image:url("images/next.png");
   background-position:center;
-  background-size:35px 60px;
+  background-size:79px 140px;
   background-repeat:no-repeat;
 }

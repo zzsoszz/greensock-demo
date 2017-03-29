@@ -49,7 +49,9 @@
 			self.currentPage=1;
 			self.totalPage=0;
 			self.imgEles;
-			self.default="";
+			self.default="images/none.png";
+			self.nextBtn;
+			self.prevBtn;
 			self.timeline = new TimelineMax({paused:true});
 			self.getPrevPage=function()
 			{
@@ -71,18 +73,38 @@
 					return self.currentPage++;
 				}
 			};
+			self.isHead=function()
+			{
+				return self.currentPage==1;
+			};
+			self.isEnd=function()
+			{
+				return self.currentPage==self.totalPage;
+			};
 			self.getCurrentPageData=function()
 			{
 				return datas=self.pageData[self.currentPage-1];
 			};
+			self.freshUI=function(){
+				if(self.isHead())
+				{
+					self.prevBtn.addClass("disable");
+				}else{
+					self.prevBtn.removeClass("disable");
+				}
+				if(self.isEnd()){
+					self.nextBtn.addClass("disable");
+				}else{
+					self.nextBtn.removeClass("disable");
+				}
+			};
 		  	self.init=function(options){
 		  		self.imgEles = $(target).find(".item").find("img");
-		  		var nextBtn=target.find(".next");
-		  		var prevBtn=target.find(".prev");
+		  		self.nextBtn=target.find(".next");
+		  		self.prevBtn=target.find(".prev");
 		  		self.values=options.values;
 		  		self.pageData=_.chunk(self.values,options.pagesize);
 		  		self.totalPage=self.pageData.length;
-
   				$(self.imgEles).each(function(index, item) {
 			        self.timeline.add(TweenLite.to(item, 1, {
 			            rotationX: 360,
@@ -108,14 +130,17 @@
 			    // 	 self.timeline.remove();
 			    // });
 			    //.play();
-			    prevBtn.on("click",function(){
+			    self.prevBtn.on("click",function(){
 			    	self.getPrevPage();
 			    	self.timeline.restart();
+			    	self.freshUI();
 			    });
-			    nextBtn.on("click",function(){
+			    self.nextBtn.on("click",function(){
 			    	self.getNextPage();
 			    	self.timeline.restart();
+			    	self.freshUI();
 			    });
+			    self.freshUI();
 
 		  	};
 		}
