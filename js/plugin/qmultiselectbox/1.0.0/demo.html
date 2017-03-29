@@ -1,0 +1,111 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+
+
+<!--
+<link rel="stylesheet" href="main.css"   media="all"    type="text/css" />
+-->
+<link rel="stylesheet" href="../../../../css/main.css"   media="all"    type="text/css" />
+<link rel="stylesheet" href="plugin.css"   media="all"    type="text/css" />
+<script type="text/javascript"  src="rem.js" ></script>
+<script type="text/javascript"  src="jquery-1.10.2.js" ></script>
+<script type="text/javascript"  src="jquery.json-2.4.js" ></script>
+<script type="text/javascript"  src="plugin.js" ></script>
+
+
+<script>
+	$(document).ready(
+		function()
+		{
+			$(".mutivalue").qmultiselectbox({
+				qmultiselectboxele:$("#qmultiselectbox1")
+			});
+		}
+	);
+</script>
+
+
+</head>
+
+
+<body>
+
+<input class="mutivalue" type="text"  />
+
+
+
+
+<div class="popbox">
+	
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+		
+		
+		<div id="qmultiselectbox1"  class="qmultiselectbox multiselectbox">
+			<p class="title">星级价格</p>
+			<div class="conditionbox">
+				<p class="name">星级</p>
+				<div class="valuebox clearfix" >
+					<span class="qitem  valueitem active" data-qvalue="不限制">
+						不限制
+					</span>
+					<span class="qitem valueitem"  data-qvalue="快捷连锁">
+						快捷连锁
+					</span>
+					<span class="qitem valueitem"  data-qvalue="二星级">
+						二星级
+					</span>
+					<span class="qitem valueitem active"  data-qvalue="三星级">
+						三星级
+					</span>
+					<span class="qitem valueitem"  data-qvalue="四星级">
+						四星级
+					</span>
+				</div>
+			</div>
+			
+			<div class="conditionbox  price">
+				<p class="name">星级</p>
+				<div class="valuebox clearfix" >
+					<span class="qitem valueitem active" data-qvalue="100">
+						100
+					</span>
+					<span class="qitem valueitem" data-qvalue="200">
+						200
+					</span>
+					<span class="qitem valueitem" data-qvalue="300">
+						300
+					</span>
+					<span class="qitem valueitem active" data-qvalue="400">
+						400
+					</span>
+					<span class="qitem valueitem" data-qvalue="500">
+						500
+					</span>
+				</div>
+			</div>
+			
+			
+			<div class="actionbox">
+				<div class="row">
+					<a class="qcomfirm col-xs-5 btn large white">确认</a>
+					<span class="col-xs-2"></span>
+					<a class="qcancel col-xs-5 btn large red">取消</a>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+
+
+</body>
+
+</html>

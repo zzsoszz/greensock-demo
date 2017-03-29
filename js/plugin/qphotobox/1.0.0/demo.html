@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bossapp</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="plugin.css">
+
+	<script type="text/javascript" src="js/TweenMax.js"></script>
+	<script type="text/javascript" src="js/TimelineMax.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lodash.min.js"></script>
+	<script type="text/javascript" src="plugin.js"></script>
+	
+</head>
+<body>
+
+	<div style="background:#282828;margin-top:200px;padding:50px;">
+		<h1 style="color:#fff;text-align: center;">导师介绍</h1>
+		<div>
+			<div class="qphotobox">
+				<div class="qphotolist">
+					<div class="item">
+						<img src="images/teacheravatar.png" style="max-width:270px;max-height:370px" >
+					</div>
+					<div class="item">
+						<img src="images/teacheravatar.png" style="max-width:270px;max-height:370px">
+					</div>
+					<div class="item">
+						<img src="images/teacheravatar.png" style="max-width:270px;max-height:370px">
+					</div>
+				</div>
+				<div class="next">
+				</div>
+				<div class="prev">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+</body>
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {
+
+	$(".qphotobox").qphotobox({
+		values:[{
+			img:"images/teacheravatar.png",
+			link:"http://www.baidu.com"
+		},{
+			img:"images/teacheravatar.png",
+			link:"http://www.baidu.com"
+		},{
+			img:"images/teacheravatar.png",
+			link:"http://www.baidu.com"
+		},{
+			img:"images/teacheravatar.png",
+			link:"http://www.baidu.com"
+		},{
+			img:"images/teacheravatar2.png",
+			link:"http://www.baidu.com"
+		},{
+			img:"images/teacheravatar2.png",
+			link:"http://www.baidu.com"
+		},{
+			img:"images/teacheravatar2.png",
+			link:"http://www.baidu.com"
+		},{
+			img:"images/teacheravatar2.png",
+			link:"http://www.baidu.com"
+		},{
+			img:"images/teacheravatar2.png",
+			link:"http://www.baidu.com"
+		}],
+		pagesize:4
+	});
+	
+});
+</script>
+<!-- END PAGE LEVEL SCRIPTS -->
+
+
+
+</html>

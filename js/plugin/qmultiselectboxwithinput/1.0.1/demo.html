@@ -1,0 +1,119 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+
+
+<!--
+<link rel="stylesheet" href="main.css"   media="all"    type="text/css" />
+-->
+<link rel="stylesheet" href="../../../../css/main.css"   media="all"    type="text/css" />
+<link rel="stylesheet" href="plugin.css"   media="all"    type="text/css" />
+<script type="text/javascript"  src="rem.js" ></script>
+<script type="text/javascript"  src="jquery-1.10.2.js" ></script>
+
+<link rel="stylesheet" href="../../qalert/1.0.0/plugin.css"   media="all"    type="text/css" />
+<script type="text/javascript"  src="../../qalert/1.0.0/plugin.js" ></script>
+<script type="text/javascript"  src="plugin.js" ></script>
+
+
+
+<script>
+	$(document).ready(
+		function()
+		{
+			$(".mutivalue").qmultiselectbox({
+				qmultiselectboxele:$("#checkinperson_qmultiselectbox"),
+				maxSelect:2
+			});
+		}
+	);
+</script>
+
+
+</head>
+
+
+<body>
+
+<p class="qalert hidden">
+</p>
+
+<input class="mutivalue" type="text"  />
+
+
+
+<div class="popbox show">
+	
+	<div class="popmask">
+	</div>
+	<div class="popcontent">
+		
+		
+		<div id="checkinperson_qmultiselectbox"  class="qmultiselectbox multiselectbox">
+			<p class="title">入住人</p>
+			
+			
+			<div  class="qlistgroup listgroup-dynamic">
+				<div class="qitemtemplate qitem listrow myflexbox hidden"  data-qvalue="">
+					<span class="fixiedarea iconfont icon-right1">
+					</span>
+					<span class="qdesc qselect equalarea">
+						
+					</span>
+					<span class="qdelete fixiedarea iconfont icon-wrong">
+					</span>
+				</div>
+				<div class="qitem  listrow myflexbox"  data-qvalue="张三">
+					<span class="fixiedarea iconfont icon-right1">
+					</span>
+					<span class="qselect qdesc equalarea">
+						张三
+					</span>
+					<span class="qdelete fixiedarea iconfont icon-wrong">
+					</span>
+				</div>
+				<div class="qadd  listrow myflexbox">
+					<span class="fixiedarea iconfont icon-plus">
+					</span>
+				</div>
+			</div>
+			
+
+			<div  class="qinputpaneltemplate hidden panel input-panel ">
+					<div class="body">
+							<div class="input-group">
+						          <input class="qinputvalue formcontrol"   placeholder="联系人" type="text">
+						          <span class="qinputcomfirm input-group-addons textjustify">
+						            <span class="color-red iconfont icon-right font21 " ></span>
+						          </span>
+						          <span class="qinputcancel input-group-addons textjustify">
+						            <span class="color-red iconfont icon-wrong color-red font21" ></span>
+						          </span>
+					        </div>
+			        </div>
+			</div>
+			
+			<div class="actionbox">
+				<div class="row">
+					<a class="qcomfirm col-xs-5 btn large white">确认</a>
+					<span class="col-xs-2"></span>
+					<a class="qcancel col-xs-5 btn large red">取消</a>
+				</div>
+			</div>
+
+
+		</div>
+		
+
+	</div>
+</div>
+
+
+			
+
+
+
+</body>
+
+</html>

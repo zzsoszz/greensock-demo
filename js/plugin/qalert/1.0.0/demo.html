@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="延时提示2">
+	<meta charset="UTF-8">
+	<title>Document</title>.
+  <link rel="stylesheet" href="plugin.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script src="plugin.js"></script>
+  <script>
+  	
+  	$(document).ready(function(){
+  		
+		$('#btn').on('click', function () {
+		   $(".alert").text("11111111");
+		   $.fn.qalert();
+		});
+		
+  	});
+
+  </script>
+
+
+</head>
+<body>
+
+<p class="qalert hidden">
+</p>
+
+<input id="btn" type="button" value="测试">
+
+</body>
+</html>

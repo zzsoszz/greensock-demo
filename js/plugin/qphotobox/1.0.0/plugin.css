@@ -1,0 +1,37 @@
+.qphotobox {
+	margin:auto;
+    position: relative;
+    width:fit-content;
+}
+.qphotobox .qphotolist{
+    overflow: hidden;
+}
+.qphotobox .qphotolist .item{
+    float:left;
+    padding:20px;
+}
+.qphotobox .prev{
+  width:35px;
+  height:60px;
+  position:absolute;
+  top:50%;
+  left:0;
+  transform: translate(-100%, -50%);
+  background-image:url("images/prev.png");
+  background-position:center;
+  background-size:35px 60px;
+  background-repeat:no-repeat;
+  max-width:100%;
+}
+.qphotobox .next{
+  width:35px;
+  height:60px;
+  position:absolute;
+  top:50%;
+  right:0;
+  transform: translate(100%, -50%);
+  background-image:url("images/next.png");
+  background-position:center;
+  background-size:35px 60px;
+  background-repeat:no-repeat;
+}
