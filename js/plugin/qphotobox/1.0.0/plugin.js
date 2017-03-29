@@ -46,12 +46,13 @@
 			self=this;
 			self.values=[];
 			self.pageData=[];
-			self.currentPage=1;
+			self.currentPage=0;
 			self.totalPage=0;
 			self.imgEles;
 			self.default="images/none.png";
 			self.nextBtn;
 			self.prevBtn;
+			self.speed=1;
 			self.timeline = new TimelineMax({paused:true});
 			self.getPrevPage=function()
 			{
@@ -99,14 +100,27 @@
 				}
 			};
 		  	self.init=function(options){
-		  		self.imgEles = $(target).find(".item").find("img");
-		  		self.nextBtn=target.find(".next");
-		  		self.prevBtn=target.find(".prev");
+		  		self.speed=options.speed;
 		  		self.values=options.values;
 		  		self.pageData=_.chunk(self.values,options.pagesize);
 		  		self.totalPage=self.pageData.length;
+		  		var qphotolist=$(target).find(".qphotolist");
+		  		var itemTemp=$(target).find(".itemTemp");
+		  		for(var i=0;i<options.pagesize;i++){
+		  			var item=itemTemp.clone().removeClass("itemTemp").addClass("item").show();
+	                if(self.values[i])
+	                {
+	               		item.find("img").attr("src", self.values[i].img);
+	                }else{
+	                	item.find("img").attr("src",self.default);
+	                }
+	                qphotolist.append(item);
+		  		};
+		  		self.imgEles = $(target).find(".item").find("img");
+		  		self.nextBtn=target.find(".next");
+		  		self.prevBtn=target.find(".prev");
   				$(self.imgEles).each(function(index, item) {
-			        self.timeline.add(TweenLite.to(item, 1, {
+			        self.timeline.add(TweenLite.to(item,self.speed, {
 			            rotationX: 360,
 			            onComplete: function(data) {
 			            	var datas=self.getCurrentPageData();
@@ -120,16 +134,7 @@
 			            onCompleteParams: [item]
 			        }), "-=0.25");
 			    });
-			    //self.timeline.addCallback(function(){
-			    	 // self.timeline.clear();
-			    	 // self.timeline.remove();
-			    //});
-
-			    // self.timeline.addCallback(function(){
-			    // 	 self.timeline.clear();
-			    // 	 self.timeline.remove();
-			    // });
-			    //.play();
+			    
 			    self.prevBtn.on("click",function(){
 			    	self.getPrevPage();
 			    	self.timeline.restart();
@@ -140,7 +145,6 @@
 			    	self.timeline.restart();
 			    	self.freshUI();
 			    });
-			    self.freshUI();
 
 		  	};
 		}
