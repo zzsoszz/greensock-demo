@@ -89,17 +89,17 @@ jQuery(document).ready(function() {
 	
 	var switchflag=true;
 	var i=0;
-	var tl=new TimelineMax({repeat:-1,repeatDelay:0});
-	var icon=$(this).find(".item").toArray();
-	tl.staggerTo(icon,1,{
-			rotationX:"360"
-		},0.25);
-	;
-	tl.addCallback(function(){
-		switchflag=!switchflag;
-		var avatar=switchflag?"images/teacheravatar.png":"images/teacheravatar2.png";
-		var icon=$(".hmenu").find("img").attr("src",avatar);
-	},"-=0.5");
+	var tl=new TimelineMax({repeat:-1,repeatDelay:1});
+	var imgs=$(this).find(".item").find("img");
+	$(imgs).each(function(index,item){
+		tl.add( TweenLite.to(item, 0.5, {rotationX:360,onComplete:function(data){
+			switchflag=!switchflag;
+			var avatar=switchflag?"images/teacheravatar.png":"images/teacheravatar2.png";
+			$(data).attr("src",avatar);
+		},onCompleteParams:[item]
+		}), "-=0.25");
+	});
+	tl.play();
 	
 });
 </script>
