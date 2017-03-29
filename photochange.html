@@ -4,183 +4,75 @@
 	<meta charset="UTF-8">
 	<title>bossapp</title>
 	<meta name=viewport content="width=device-width, initial-scale=1">
-	
 	<script src="js/greensock/TweenMax.js"></script>
 	<script src="js/greensock/TimelineMax.js"></script>
-	
 
 	<style type="text/css">
 		html,body{
 			width:100%;
 		}
-		.weixin{
-		    width: 38px;
-		    height: 100%;
-		    display: inline-block;
-		    background: url("images/weixin.png") center center no-repeat;
+		
+		.hmenu {
+			margin:auto;
+		    position: relative;
+		    width:fit-content;
 		}
-		.sina {
-		    width: 38px;
-		    height: 100%;
-		    display: inline-block;
-		    background: url("images/sina.png") center center no-repeat;
+		.hmenu .hlistbox{
+		    overflow: hidden;
 		}
-		/*
-		mobile
-		*/
-		@element '.nav' and (max-width:499px){
-			
+		.hmenu .hlistbox .item{
+		    float:left;
+		    padding:20px;
 		}
-		/*
-		pc
-		*/
-		@element '.nav' and (min-width:500px)
-		{
-			
-			$this {
-				padding:0 200px;
-				display:block;
-				height:5em;
-				width:100%;
-				background-color: rgba(0,0,0,0.08);
-				position: absolute;
-				top:0;
-				z-index:2;
-			}
-			$this .brand{
-				display: inline-block;
-			    float: left;
-			    height:100%;
-			    width: 200px;
-			    background: url("images/logo.png") center center no-repeat;
-			}
-			$this .menu{
-				height:100%;
-				display: inline-block;
-				float: right;
-			}
-			$this .menu .item{
-				vertical-align: middle;
-				display: inline-block;
-				height:100%;
-				line-height:5em;
-				position: relative;
-			}
-			$this .menu .item > label{
-				margin:0 1em;
-				font-size:120%;
-				color:#fff;
-			}
-			$this .menu .item > .popdown{
-				display:none;
-			}
-			$this .menu .item:hover > .popdown{
-				display:block;
-				position:absolute;
-				top: 100%;
-			    left: 50%;
-			    transform: translateX(-50%);
-			}
+		.hmenu .prev{
+		  width:35px;
+		  height:60px;
+		  position:absolute;
+		  top:50%;
+		  left:0;
+		  transform: translate(-100%, -50%);
+		  background-image:url("images/prev.png");
+		  background-position:center;
+		  background-size:35px 60px;
+		  background-repeat:no-repeat;
+		  max-width:100%;
 		}
-		@element '.banner' and (min-width:500px)
-		{
-/*			$this {
-				width: 100%;
-			    height: 1080px;
-			    background-image: url("images/banner.png");
-			    background-attachment: fixed;
-			    background-position: center center;
-			    background-repeat: no-repeat;
-			    background-size: cover;
-			}*/
+		.hmenu .next{
+		  width:35px;
+		  height:60px;
+		  position:absolute;
+		  top:50%;
+		  right:0;
+		  transform: translate(100%, -50%);
+		  background-image:url("images/next.png");
+		  background-position:center;
+		  background-size:35px 60px;
+		  background-repeat:no-repeat;
 		}
+
+
 	</style>
 </head>
 <body>
-	<div class="nav">
-		<a class="brand" href="#">
-		</a>
-		<div class="menu">
-			<div class="item">
-				<label>首页</label>
-				<div class="popdown">
-				</div>
-			</div>
-			<div class="item">
-				<label>课程中心</label>
-				<div class="popdown">
-				</div>
-			</div>
-			<div class="item">
-				<label>下载APP</label>
-				<div class="popdown">
-				</div>
-			</div>
-			<div class="item">
-				<label>关注我们</label>
-				<div class="popdown">
-				</div>
-			</div>
-			<div class="item">
-				<label>
-					<a href="#" class="weixin"></a>
-				</label>
-				<div class="popdown" style="width:226px;">
-						<img  src="images/weixinqrcode.png" style="width:226px;height:232px;background:cover;background-repeat: no-repeat;" >
-				</div>
-			</div>
-			<div class="item">
-				<label>
-					<a href="#" class="sina" ></a>
-				</label>
-			</div>
-		</div>
-	</div>
-	
-	<div class="qcarrousel" >
-	    <div class="itembox" >
-	        <a class="item" href="#" >
-	          <img   src="images/banner.png">
-	        </a>
-	        <a class="item" href="#" >
-	          <img  src="images/banner2.png">
-	        </a>
-	        <a class="item" href="#" >
-	          <img  src="images/banner3.png">
-	        </a>
-	    </div>
-	    <div class="dotsbox">
-	        <div class="dotslist">
-	            <div class="dot active">
-	            </div>
-	            <div class="dot">
-	            </div>
-	            <div class="dot">
-	            </div>
-	        </div>
-	    </div>
-	</div>
-	
+
 	<div style="background:#282828;margin-top:200px;padding:50px;">
 		<h1 style="color:#fff;text-align: center;">导师介绍</h1>
 		<div>
 			<div class="hmenu">
 				<div class="hlistbox">
 					<div class="item">
-						<img src="images/teacheravatar.png" >
+						<img src="images/teacheravatar.png" style="max-width:270px;max-height:370px" >
 					</div>
 					<div class="item">
-						<img src="images/teacheravatar.png" >
+						<img src="images/teacheravatar.png" style="max-width:270px;max-height:370px">
 					</div>
 					<div class="item">
-						<img src="images/teacheravatar.png" >
+						<img src="images/teacheravatar.png" style="max-width:270px;max-height:370px">
 					</div>
 				</div>
 				<div class="next">
-					<img src="images/prev.png" style="width: 273px;height:372px;">
 				</div>
 				<div class="prev">
-					<img src="images/next.png" style="width: 273px;height:372px;">
 				</div>
 			</div>
 		</div>
@@ -190,44 +82,10 @@
 </body>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
-<script src="js/plugin/qcarrousel/1.0.0/plugin.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGIN STYLES -->
-
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {
-	$(".qcarrousel").qcarrousel({autoRun:false});
-	var i=0;
-	var tl=new TimelineMax({repeat:-1,repeatDelay:0});//{repeat:-1,repeatDelay:0}
-	var icon=$(this).find(".item");
-	var iconArray=$(this).find(".item").toArray();
-	// icon.each(function(index,item){
-	// 	var tween1=TweenMax.to(item, 1, {
-	// 		x:360,
-	// 		paused:true
-	// 	});
-	// 	tl.add(tween1);
-	// });
-	//tl.pause();
-	//tl.resume();
-	//tl.play();
-
-	// var i=0;
-	// var tl=new TimelineMax({repeat:-1,repeatDelay:0});//{repeat:-1,repeatDelay:0}
-	// var icon=$(this).find(".item").toArray();
-	
-	// tl.staggerTo(icon,2,{
-	// 	rotationX:"360"
-	// },0.25,function(){
-	// 	console.log(this);
-	// },function(){
-	// 	console.log(this);
-	// },function(){
-	// 	console.log(this);
-	// });
-	//https://greensock.com/docs/#/HTML5/GSAP/TimelineMax/staggerTo/
 	
 	var switchflag=true;
 	var i=0;
@@ -243,7 +101,6 @@ jQuery(document).ready(function() {
 		var icon=$(".hmenu").find("img").attr("src",avatar);
 	},"-=0.5");
 	
-
 });
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
