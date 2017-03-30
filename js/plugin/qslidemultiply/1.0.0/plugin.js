@@ -139,40 +139,44 @@
 				}
 			};
 			self.turnPrev=function(){
-				self.timeline.kill().clear();
-				//当前页面的往右移动
-			    var  curPageData=self.pager.getCurrentPageData();
-			    var  prevPageData=self.pager.prev().getCurrentPageData();
-			    for(var i=0;i<curPageData.length;i++){
-			    	self.timeline.add(TweenLite.to(curPageData[i],self.speed, {
-				            x:self.pager.pagesize+"00%"
-				    }), "0");
-			    };
-			    //前一页的移动到可视区域
-			    for(var i=0;i<prevPageData.length;i++){
-			    	$(prevPageData[i]).css("transform","translateX(-100%)");
-			    	self.timeline.add(TweenLite.to(prevPageData[i],self.speed, {
-				            x:i+"00%"
-				    }), "0");
-			    };
-			    self.timeline.play();
+				if(!self.timeline.isActive()){
+					self.timeline.kill().clear();
+					//当前页面的往右移动
+				    var  curPageData=self.pager.getCurrentPageData();
+				    var  prevPageData=self.pager.prev().getCurrentPageData();
+				    for(var i=0;i<curPageData.length;i++){
+				    	self.timeline.add(TweenLite.to(curPageData[i],self.speed, {
+					            x:self.pager.pagesize+"00%"
+					    }), "0");
+				    };
+				    //前一页的移动到可视区域
+				    for(var i=0;i<prevPageData.length;i++){
+				    	$(prevPageData[i]).css("transform","translateX(-100%)");
+				    	self.timeline.add(TweenLite.to(prevPageData[i],self.speed, {
+					            x:i+"00%"
+					    }), "0");
+				    };
+				    self.timeline.play();
+				}
 			};
 			self.turnNext=function(){
-				self.timeline.kill().clear();
-			    var  curPageData=self.pager.getCurrentPageData();
-			    var  nextPageData=self.pager.next().getCurrentPageData();
-			    for(var i=0;i<curPageData.length;i++){
-			    	self.timeline.add(TweenLite.to(curPageData[i],self.speed, {
-				            x: "-100%"
-				    }), "0");
-			    };
-			    for(var i=0;i<nextPageData.length;i++){
-			    	$(nextPageData[i]).css("transform","translateX("+(nextPageData.length*100)+"%)");
-			    	self.timeline.add(TweenLite.to(nextPageData[i],self.speed, {
-				            x:i+"00%"
-				    }), "0");
-			    };
-			    self.timeline.play();
+				if(!self.timeline.isActive()){
+					self.timeline.kill().clear();
+				    var  curPageData=self.pager.getCurrentPageData();
+				    var  nextPageData=self.pager.next().getCurrentPageData();
+				    for(var i=0;i<curPageData.length;i++){
+				    	self.timeline.add(TweenLite.to(curPageData[i],self.speed, {
+					            x: "-100%"
+					    }), "0");
+				    };
+				    for(var i=0;i<nextPageData.length;i++){
+				    	$(nextPageData[i]).css("transform","translateX("+(nextPageData.length*100)+"%)");
+				    	self.timeline.add(TweenLite.to(nextPageData[i],self.speed, {
+					            x:i+"00%"
+					    }), "0");
+				    };
+				    self.timeline.play();
+				}
 			};
 		  	self.init=function(options){
 		  		//transform:translateX(-100%);

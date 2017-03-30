@@ -6,6 +6,7 @@
 }
 .qslidemultiply .qslideviewbox{
     overflow: hidden;
+    position: relative;
 }
 .qslidemultiply .qslideviewbox .item{
     padding:20px;
